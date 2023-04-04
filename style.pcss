@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.glowy {
+  position: relative;
+  isolation: isolate;
+}
+
+.glowy::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  z-index: -1;
+
+  @apply border-solid border-2 border-fuchsia-500 rounded-3xl glow-lg glow-fuchsia-400;
+}
